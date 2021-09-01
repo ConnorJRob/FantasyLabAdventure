@@ -1,6 +1,6 @@
 package Characters;
 
-public class Character {
+public abstract class Character {
 
     private int hitPoints;
     private String name;
@@ -24,5 +24,9 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void takeDamage(int damage){
+        this.hitPoints -= damage;
     }
 }
