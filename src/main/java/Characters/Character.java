@@ -29,4 +29,8 @@ public abstract class Character {
     public void takeDamage(int damage){
         this.hitPoints -= damage;
     }
+
+    public void heal(int healAmount){
+        this.hitPoints += healAmount;
+    }
 }

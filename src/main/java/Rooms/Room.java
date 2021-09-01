@@ -1,6 +1,7 @@
 package Rooms;
 
 import Characters.EnemyCharacters.Enemy;
+import Characters.Character;
 import Treasure.Treasure;
 
 import java.util.ArrayList;
@@ -35,5 +36,15 @@ public class Room {
 
     public void setEnemy(Enemy enemy) {
         this.enemy = enemy;
+    }
+
+    public void addTreasure(Treasure treasure) {
+        this.treasure.add(treasure);
+    }
+
+    public void rewardAdventurer(){
+        if (this.enemy.getHitPoints() <= 0){
+            this.treasure.clear();
+        }
     }
 }

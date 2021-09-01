@@ -1,9 +1,10 @@
 package Characters.SupportCharacters;
 
+import Attacks.Heal;
 import Characters.Character;
 import HealingTools.HealingTool;
 
-public abstract class SupportCharacter extends Character {
+public abstract class SupportCharacter extends Character implements Heal {
 
     HealingTool healingTool;
 
@@ -18,5 +19,10 @@ public abstract class SupportCharacter extends Character {
 
     public void changeHealingTool(HealingTool healingTool) {
         this.healingTool = healingTool;
+    }
+
+    public void healAbility(Character character) {
+        int healAmount = getHealingTool().getHealingValue();
+        character.heal(healAmount);
     }
 }

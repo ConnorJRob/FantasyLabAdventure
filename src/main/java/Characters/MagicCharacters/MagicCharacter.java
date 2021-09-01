@@ -1,9 +1,10 @@
 package Characters.MagicCharacters;
 
+import Attacks.SpellAttack;
 import Characters.Character;
 import Characters.CompanionCharacters.CompanionCharacter;
 
-public abstract class MagicCharacter extends Character {
+public abstract class MagicCharacter extends Character implements SpellAttack {
 
     private CompanionCharacter companionCharacter;
     private MagicType magicType;
@@ -28,5 +29,10 @@ public abstract class MagicCharacter extends Character {
 
     public void changeMagicType(MagicType magicType) {
         this.magicType = magicType;
+    }
+
+    public void castSpellAttack(Character character){
+        int damage = getMagicType().getSpellDamage();
+        character.takeDamage(damage);
     }
 }
